@@ -16,5 +16,20 @@ const promptUser = () => {
         "Update an employee role",
       ],
     },
+    {
+      type: "input",
+      name: "department",
+      message: "What is the name of the department?",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log("Please enter a department!");
+          return false;
+        }
+      },
+    },
   ]);
 };
+console.log(console.table(`SELECT * FROM departments;`));
+promptUser();
